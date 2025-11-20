@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { newsService } from '../../lib/newsService';
 import { NewsItem } from '../../types';
-import { Plus, Edit, Trash2, LogOut, ArrowLeft } from 'lucide-react';
+import { Plus, Edit, Trash2, LogOut, ArrowLeft, CalendarDays, Newspaper } from 'lucide-react';
 
 const AdminDashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -40,24 +40,53 @@ const AdminDashboard: React.FC = () => {
             <button onClick={() => navigate('/')} className="p-3 bg-white rounded-full shadow-sm hover:bg-slate-100">
                 <ArrowLeft className="text-slate-600" />
             </button>
-            <h2 className="text-3xl font-bold text-gov-dark">Мэдээний удирдлага</h2>
+            <h2 className="text-3xl font-bold text-gov-dark">Админ самбар</h2>
         </div>
-        <div className="flex gap-4">
-          <button 
-            onClick={handleLogout}
-            className="px-6 py-3 bg-white border border-slate-200 text-slate-600 rounded-xl font-bold flex items-center hover:bg-slate-50"
-          >
-            <LogOut className="mr-2" size={20} />
-            Гарах
-          </button>
-          <button 
+        <button 
+          onClick={handleLogout}
+          className="px-6 py-3 bg-white border border-slate-200 text-slate-600 rounded-xl font-bold flex items-center hover:bg-slate-50"
+        >
+          <LogOut className="mr-2" size={20} />
+          Гарах
+        </button>
+      </div>
+
+      <div className="grid grid-cols-2 gap-6 mb-10">
+         <button 
+           onClick={() => navigate('/admin/schedule')}
+           className="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200 flex items-center hover:shadow-md transition-all text-left"
+         >
+            <div className="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mr-6">
+               <CalendarDays size={32} />
+            </div>
+            <div>
+               <h3 className="text-2xl font-bold text-slate-800">Хуваарь засах</h3>
+               <p className="text-slate-500">Комиссын долоо хоногийн хуваарь шинэчлэх</p>
+            </div>
+         </button>
+
+         <button 
+           className="bg-gov-blue text-white p-8 rounded-[2rem] shadow-md flex items-center cursor-default"
+         >
+            <div className="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mr-6">
+               <Newspaper size={32} />
+            </div>
+            <div>
+               <h3 className="text-2xl font-bold">Мэдээ засах</h3>
+               <p className="text-blue-200">Доорх жагсаалтаас сонгоно уу</p>
+            </div>
+         </button>
+      </div>
+
+      <div className="flex justify-between items-center mb-6">
+         <h3 className="text-2xl font-bold text-gov-dark">Мэдээний жагсаалт</h3>
+         <button 
             onClick={() => navigate('/admin/news/new')}
             className="px-6 py-3 bg-gov-blue text-white rounded-xl font-bold flex items-center shadow-lg hover:bg-gov-dark active:scale-95 transition-all"
           >
             <Plus className="mr-2" size={24} />
             Мэдээ нэмэх
           </button>
-        </div>
       </div>
 
       <div className="bg-white rounded-[2rem] shadow-sm border border-slate-200 overflow-hidden">

@@ -17,6 +17,16 @@ export interface NewsItem {
   category: string;
 }
 
+export interface ScheduleItem {
+  id: string;
+  date: string;
+  time: string;
+  target: string; // The object/company being inspected
+  district: string;
+  type: string; // Type of inspection
+  team: string; // Team members
+}
+
 export interface StatData {
   name: string;
   value: number;

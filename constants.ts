@@ -1,4 +1,4 @@
-import { Building2, FileText, BarChart3, Newspaper, MapPin, Info } from 'lucide-react';
+import { Building2, FileText, BarChart3, Newspaper, MapPin, Info, CalendarDays } from 'lucide-react';
 import { NavItem, NewsItem, StatData, TeamMember, ApplicationStep } from './types';
 
 export const APP_CONFIG = {
@@ -12,7 +12,7 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'inspection', title: 'Хяналт шалгалтын мэдээлэл', icon: BarChart3, path: '/inspection' },
   { id: 'complaints', title: 'Өргөдөл, гомдол', icon: FileText, path: '/complaints' },
   { id: 'news', title: 'Мэдээ, мэдээлэл', icon: Newspaper, path: '/news' },
-  { id: 'contact', title: 'Холбоо барих / Байршил', icon: MapPin, path: '/contact' },
+  { id: 'schedule', title: 'Комиссын хуваарь', icon: CalendarDays, path: '/schedule' },
 ];
 
 export const STATS_DATA: StatData[] = [

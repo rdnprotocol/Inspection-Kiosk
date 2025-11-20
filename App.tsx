@@ -8,11 +8,13 @@ import Inspection from './pages/Inspection';
 import Complaints from './pages/Complaints';
 import News from './pages/News';
 import Contact from './pages/Contact';
+import Schedule from './pages/Schedule';
 
 // Admin Pages
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import NewsEditor from './pages/admin/NewsEditor';
+import ScheduleManager from './pages/admin/ScheduleManager';
 
 const App: React.FC = () => {
   return (
@@ -29,12 +31,14 @@ const App: React.FC = () => {
               <Route path="/complaints" element={<Complaints />} />
               <Route path="/news" element={<News />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/schedule" element={<Schedule />} />
 
               {/* Admin Routes */}
               <Route path="/admin" element={<AdminLogin />} />
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
               <Route path="/admin/news/new" element={<NewsEditor />} />
               <Route path="/admin/news/edit/:id" element={<NewsEditor />} />
+              <Route path="/admin/schedule" element={<ScheduleManager />} />
             </Routes>
           </main>
         </div>
